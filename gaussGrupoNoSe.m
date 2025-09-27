@@ -1,6 +1,6 @@
-function g = gaussGrupoNoSe(a, b)
-    [n, ~] = size(a);
-    u = [a b];
+function g = gaussGrupoNoSe(u)
+    [n, ~] = size(u);
+    %%u = [a b];
     %% lo estoy haciendo con dos for porque sera mas facil de explicar
     %% pero se puede hacer con uno solo, aunque el codigo queda menos legible miau
     for i=1:n
