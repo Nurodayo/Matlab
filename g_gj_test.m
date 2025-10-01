@@ -1,15 +1,12 @@
 %% este archivo esta siendo actualmente utilizado para probar :P
-a=[4, -1, 0; -1, 4, -1; 0, -1, 3]; %% matrices y vectores de prueba
-b=[15; 10; 10];
+a=[3, -1, 1; 3, 4, -1; 2, 3, 6]; %% matrices y vectores de prueba
+b=[1; 0; 4];
 %% c = [matrizPrueba vectorPrueba]
 %% me falta poner la verificacion de los 0s en la diagonal
 disp("あずまんが大王");
-disp("Gauss");
-disp(gaussSolve(a, b));
-
-disp("Gauss-Jordan");
-disp(gaussJordanSolve(a, b));
 
 disp("Jacobi");
-s = jacobiGrupoNoSe(a, b, [0; 0; 0], 0, 5, 2);
+s = gaussSeidelGrupoNoSe(a, b, [0; 0; 0], 0, 127, 1)
+z = jacobiGrupoNoSe(a, b, [0; 0; 0], 0, 5, 1)
+gaussSolve(a, b)
 disp(s);
