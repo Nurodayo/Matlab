@@ -6,7 +6,6 @@ b=[1; 0; 4];
 disp("あずまんが大王");
 
 disp("Jacobi");
-s = gaussSeidelGrupoNoSe(a, b, [0; 0; 0], 0, 127, 1)
-z = jacobiGrupoNoSe(a, b, [0; 0; 0], 0, 5, 1)
+z = SORGrupoNoSe(a, b, [0; 0; 0], 0, 100, 1, 999/1000)
 gaussSolve(a, b)
 disp(s);
