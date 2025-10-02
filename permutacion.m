@@ -2,12 +2,13 @@ function p = permutacion(m)
     p=m;
     [n, ~] = size(m); %%incluso aunque le pase la matriz aumentada seguire obteniendo el valor q quiero
     for i=1:n
-        for j=i:n
-            if abs(p(i,i))<abs(p(j, i)) %%if q permuta las filas
-                aux = p(i, :); %% variable auxiliar
-                p(i, :) = p(j, :)
-                p(j, :) = aux         
-            end
+        [maximo, fila_max] = max(abs(p(i:n, i)))
+        fila_max = fila_max+i-1;
+        if maximo == 0
+            warning("Miedo")
         end
+            aux = p(i, :);
+            p(i, :) = p(fila_max, :);
+            p(fila_max, :) = aux;
     end 
 end
