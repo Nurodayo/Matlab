@@ -3,7 +3,7 @@ function gj = gaussJordanGrupoNoSe(g)
 
 for i=n:-1:1
     for j=i-1:-1:1
-        g(j, :)=g(j, :)-g(j, i)*g(i, :)
+        g(j, :)=g(j, :)-g(j, i)*g(i, :);
     end
 end
 gj = g

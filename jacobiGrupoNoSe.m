@@ -1,10 +1,16 @@
 function sol = jacobiGrupoNoSe(a, b, x0, tol, max, norma)
     u = [a b];
-    u = permutacion(u);
+    u = pivot(u);
     %% sacar los 0 de la diagonal pipipi
     b = u(:, end);
     [n, ~] = size(a);
-    for i=1;n
+    for i=1:n
+        %% Regularizacion
+        if u(i, i) == 0
+            u(i, i) = u(i, i)+0.0001
+        end
+    end
+    for i=1:n
         a(:, i)=u(:, i);
     end
 

@@ -1,12 +1,10 @@
 function sol = gaussSeidelGrupoNoSe(a, b, x0, tol, max, norma)
     u = [a b];
-    u = permutacion(u);
+    u = pivot(u);
     %% sacar los 0 de la diagonal pipipi
-    b = u(:, end);
+    b = u(:, end);    
     [n, ~] = size(a);
-    for i=1;n
-        a(:, i)=u(:, i);
-    end
+    a = u(:, 1:n)
     
     i=1;
     L = tril(a, -1);
