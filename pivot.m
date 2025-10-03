@@ -20,12 +20,7 @@ for j = 1:n-1
     Aug(max_pos+j-1,:) = C;
     
     % echelon form
-    for i = j+1:n
-        % Calculate zeta for echelon form
-        zeta = Aug(i,j)/Aug(j,j);
-        % Perform row operations for echelon form
-        Aug(i,:) = Aug(i,:) - zeta*Aug(j,:);
-    end
+
 end
 
 % Separate A and b from the augmented matrix

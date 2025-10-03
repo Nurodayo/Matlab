@@ -5,7 +5,11 @@ function g = gaussGrupoNoSe(u)
     %% pero se puede hacer con uno solo, aunque el codigo queda menos legible miau
     for i=1:n
         %% dividimos cada fila por la diagonal
-        u(i, :) = u(i, :)/u(i, i);
+        if u(i, i) ~= 0
+            u(i, :) = u(i, :)/u(i, i);
+        else
+            warning("Sistema Linealmente dependiente")
+        end
         for j=i+1:n
             u(j, :) = u(j, :)-(u(j, i)*u(i, :));
             

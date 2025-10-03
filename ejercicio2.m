@@ -57,11 +57,14 @@ max = 2^12
 norma = 2
 factorOmega = 1.5
 
+mat = gaussGrupoNoSe(mat) %% Corremos eliminacion Gauss antes de todo
+am2 = mat(:, 1:n);
+bm2 = mat(:, end)
 
-rGaussE2 = gaussSolve(ae2, be2);
-rGaussJE2 = gaussJordanSolve(ae2, be2);
-rJacobiE2 = jacobiGrupoNoSe(ae2, be2, x02, 0.01, max, norma);
-rGaussSeidelE2 = gaussSeidelGrupoNoSe(ae2, be2, x02, 0.01, max, norma);
-rSORE2 = SORGrupoNoSe(ae2, be2, x02, 0.01, max, norma, 1/factorOmega);
-
-%disp(rGaussE2)
+rGaussE2 = gaussSolve(am2, bm2);
+rGaussJE2 = gaussJordanSolve(am2, bm2);
+rJacobiE2 = jacobiGrupoNoSe(am2, bm2, x02, 0.01, max, norma);
+rGaussSeidelE2 = gaussSeidelGrupoNoSe(am2, bm2, x02, 0.01, max, norma);
+rSORE2 = SORGrupoNoSe(am2, bm2, x02, 0.01, max, norma, 1/factorOmega);
+disp("oli")
+disp(rGaussSeidelE2)
