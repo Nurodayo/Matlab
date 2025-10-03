@@ -4,26 +4,26 @@
 syms ha ac ae va ce cd eg df dg ed gh gi gf fh hj hi ib ij jb vb;
 vars = [ha, ac, ae, va, ce, cd, eg, df, dg, ed, gh, gi, gf, fh, hj, hi, ib, ij, jb, vb];
 eqs = [
-    ha-sin(10)*ac+cos(45)*ae==0, %a
-    va+cos(10)*ac+sin(45)*ae==0, %a
-    sin(10)*ac+cos(5)*ce+cos(30)*cd==0, %c
-    -cos(10)*ac+sin(5)*ce+sin(30)*cd-1500==0, %c
-    -cos(5)*ce-cos(45)*ae+cos(15)*eg==0, %e
-    -sin(5)*ce-sin(45)*ae+sin(15)*eg+ed==0, %e
-    -cos(30)*cd+cos(10)*df+cos(20)*dg==0, %d
-    -sin(30)*cd-ed-sin(20)*dg+sin(10)*df-1000==0, %d
-    -cos(20)*dg-cos(15)*eg+cos(20)*gh+cos(15)*gi==0, %g
-    -sin(15)*eg-sin(15)*gi+sin(20)*dg+sin(20)*gh+gf==0, %g
-    -cos(10)*df+cos(10)*fh==0, %f
-    -gf-sin(10)*df-sin(10)*fh-1200==0, %f
-    -cos(10)*fh-cos(20)*gh+cos(30)*hj==0, %h
-    -sin(20)*gh-hi-sin(30)*hj+sin(10)*fh-1000==0, %h
-    -cos(15)*gi+cos(45)*ib+cos(5)*ij==0, %i
-    -sin(45)*ib-sin(5)*ij+sin(15)*gi+hi==0, %i
-    -sin(10)*jb-cos(5)*ij-cos(30)*hj==0, %j
-    -cos(10)*jb+sin(5)*ij+sin(30)*hj-1500==0, %j
-    -cos(45)*ib+sin(10)*jb==0, %b
-    vb+sin(45)*ib+cos(10)*jb==0 %b
+    ha-0.1737*ac+0.7071*ae==0, %a
+    va+0.9848*ac+0.7071*ae==0, %a
+    0.1737*ac+0.9962*ce+0.8660*cd==0, %c
+    -0.9848*ac+0.0872*ce+0.5*cd-1500==0, %c
+    -0.9962*ce-0.7071*ae+0.9659*eg==0, %e
+    -0.0872*ce-0.7071*ae+0.2588*eg+ed==0, %e
+    -0.8660*cd+0.9848*df+0.9397*dg==0, %d
+    -0.5*cd-ed-0.3420*dg+0.1737*df-1000==0, %d
+    -0.9397*dg-0.9659*eg+0.9397*gh+0.9659*gi==0, %g
+    -0.2588*eg-0.2588*gi+0.3420*dg+0.3420*gh+gf==0, %g
+    -0.9848*df+0.9848*fh==0, %f
+    -gf-0.1737*df-0.1737*fh-1200==0, %f
+    -0.9848*fh-0.9397*gh+0.8660*hj==0, %h
+    -0.3420*gh-hi-0.5*hj+0.1737*fh-1000==0, %h
+    -0.9659*gi+0.7071*ib+0.9962*ij==0, %i
+    -0.7071*ib-0.0872*ij+0.2588*gi+hi==0, %i
+    -0.1737*jb-0.9962*ij-0.8660*hj==0, %j
+    -0.9848*jb+0.0872*ij+0.5*hj-1500==0, %j
+    -0.7071*ib+0.1737*jb==0, %b
+    vb+0.7071*ib+0.9848*jb==0 %b
 ];
 [ae2, be2] = equationsToMatrix(eqs, vars);
 
@@ -59,7 +59,9 @@ factorOmega = 1.5
 
 
 rGaussE2 = gaussSolve(ae2, be2);
-rGaussJE2 = gaussJordanSolve(ae2, be2);
-rJacobiE2 = jacobiGrupoNoSe(ae2, be2, x02, 0.01, max, norma);
-rGaussSeidelE2 = gaussSeidelGrupoNoSe(ae2, be2, x02, 0.01, max, norma);
-rSORE2 = SORGrupoNoSe(ae2, be2, x02, 0.01, max, norma, 1/factorOmega);
+%rGaussJE2 = gaussJordanSolve(ae2, be2);
+%rJacobiE2 = jacobiGrupoNoSe(ae2, be2, x02, 0.01, max, norma);
+%rGaussSeidelE2 = gaussSeidelGrupoNoSe(ae2, be2, x02, 0.01, max, norma);
+%rSORE2 = SORGrupoNoSe(ae2, be2, x02, 0.01, max, norma, 1/factorOmega);
+
+disp(rGaussE2)
