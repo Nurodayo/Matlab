@@ -59,9 +59,9 @@ factorOmega = 1.5
 
 
 rGaussE2 = gaussSolve(ae2, be2);
-%rGaussJE2 = gaussJordanSolve(ae2, be2);
-%rJacobiE2 = jacobiGrupoNoSe(ae2, be2, x02, 0.01, max, norma);
-%rGaussSeidelE2 = gaussSeidelGrupoNoSe(ae2, be2, x02, 0.01, max, norma);
-%rSORE2 = SORGrupoNoSe(ae2, be2, x02, 0.01, max, norma, 1/factorOmega);
+rGaussJE2 = gaussJordanSolve(ae2, be2);
+rJacobiE2 = jacobiGrupoNoSe(ae2, be2, x02, 0.01, max, norma);
+rGaussSeidelE2 = gaussSeidelGrupoNoSe(ae2, be2, x02, 0.01, max, norma);
+rSORE2 = SORGrupoNoSe(ae2, be2, x02, 0.01, max, norma, 1/factorOmega);
 
-disp(rGaussE2)
+%disp(rGaussE2)
