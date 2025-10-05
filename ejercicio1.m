@@ -10,18 +10,27 @@ ae1 =   [71.5, -20, -50, 0, 0, 0;
         ];
 be1 =   [220; 0; 0; 0; 0; 0];
 
-tol = 0.001;
-max = 2^16;
+tol = 0.01;
+max = 2^10;
 norma = 2;
-relajacion = 1.5;
 x01 = zeros(size(be1));
 
 %% Solucion inicial ocupare un vector nulo por motivos de testeo
 
 %% entregar resultados de las corrientes en el vector solucion
-rGaussE1 = gaussSolve(ae1, be1);
-rGaussJE1 = gaussJordanSolve(ae1, be1);
-rJacobiE1 = jacobiGrupoNoSe(ae1, be1, x01, tol, max, norma);
-rGaussSeidelE1 = gaussSeidelGrupoNoSe(ae1, be1, x01, tol, max, norma);
-rSORE1 = SORGrupoNoSe(ae1, be1, x01, tol, max, norma, 1/relajacion);
-disp(rGaussE1)
+rGaussE1 = gauss_solve_l1_g2(ae1, be1);
+rGaussJE1 = gauss_jordan_solve_l1_g2(ae1, be1);
+rJacobiE1 = jacobi_l1_g2(ae1, be1, x01, tol, max, norma);
+rGaussSeidelE1 = gauss_seidel_l1_g2(ae1, be1, x01, tol, max, norma);
+rSORE1 = SOR_l1_g2(ae1, be1, x01, tol, max, norma, 0.9);
+
+disp("Gauss");
+disp(rGaussE1);
+disp("Gauss Jordan");
+disp(rGaussJE1);
+disp("Jacobi");
+disp(rJacobiE1);
+disp("Gauss Seidel");
+disp(rGaussSeidelE1);
+disp("SOR");
+disp(rSORE1);

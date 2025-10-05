@@ -13,8 +13,7 @@ vars3 = [x1, x2, x3, x4, x5, x6];
 
 disp([ae3 be3]);
 mat3 = [ae3, be3];
-mat3 = pivot(mat3);
-mat3 = gaussGrupoNoSe(mat3)
+mat3 = pivot_l1_g2(mat3);
 
-rGaussE3 = gaussGrupoNoSe(mat3)
-disp(rGaussE3)
+rGaussE3 = gauss_l1_g2(mat3);
+disp(rGaussE3);

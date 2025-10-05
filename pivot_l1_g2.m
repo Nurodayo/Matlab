@@ -1,4 +1,4 @@
-function m=pivot(Aug)
+function m=pivot_l1_g2(Aug)
 % Get the length of b
 [n, ~] = size(Aug);
 % Initialize x with zeros
@@ -8,7 +8,7 @@ x = zeros(n,1);
 %Display
 %A
 %b
-Aug
+Aug;
 % Loop for partial pivoting and echelon form
 for j = 1:n-1
     % partial pivoting
@@ -24,7 +24,7 @@ for j = 1:n-1
 end
 
 % Separate A and b from the augmented matrix
-m = Aug
+m = Aug;
 %A = Aug(:,1:end-1 );
 %b = Aug(:,end);
 end

@@ -1,4 +1,4 @@
-function g = gaussGrupoNoSe(u)
+function g = gauss_l1_g2(u)
     [n, ~] = size(u);
     %%u = [a b];
     %% lo estoy haciendo con dos for porque sera mas facil de explicar
