@@ -30,25 +30,12 @@ eqs = [
 %%
 
 mat = [ae2 be2];
-%mat = mat(2:n, 2:n)
+
 
 [n, ~] = size(mat);
 
 inc = (1:n)';
-%[mat2, inc] = permutacionLoca(mat, inc)
 
-
-
-%mat2(end, :) = mat2(end, :) + mat2(1, :);
-%mat2 = mat2(2:n, 2:end);
-%[n, ~] = size(mat2);
-%inc = inc(2:end, 1)
-
-%[mat2, inc] = permutacionLoca(mat2, inc)
-
-% mat2 = gaussGrupoNoSe(mat2)
-%am2 = mat2(:, 1:n);
-%bm2 = mat2(:, end);
 mat = [ae2 be2];
 mat = pivot_l1_g2(mat);
 
@@ -65,7 +52,7 @@ rGaussE2 = gauss_solve_l1_g2(am2, bm2);
 rGaussJE2 = gauss_jordan_solve_l1_g2(am2, bm2);
 rJacobiE2 = jacobi_l1_g2(am2, bm2, x02, 0.01, max, norma);
 rGaussSeidelE2 = gauss_seidel_l1_g2(am2, bm2, x02, 0.01, max, norma);
-rSORE2 = SOR_l1_g2(am2, bm2, x02, 0.01, max, norma, 1/1.5);
+rSORE2 = SOR_l1_g2(am2, bm2, x02, 0.01, 1000, norma, 1.5);
 
 disp("Gauss");
 disp(rGaussE2);

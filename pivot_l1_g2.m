@@ -19,7 +19,6 @@ for j = 1:n-1
     Aug(j,:) = Aug(max_pos+j-1,:);
     Aug(max_pos+j-1,:) = C;
     
-    % echelon form
 
 end
 

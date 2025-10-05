@@ -22,7 +22,7 @@ rGaussE1 = gauss_solve_l1_g2(ae1, be1);
 rGaussJE1 = gauss_jordan_solve_l1_g2(ae1, be1);
 rJacobiE1 = jacobi_l1_g2(ae1, be1, x01, tol, max, norma);
 rGaussSeidelE1 = gauss_seidel_l1_g2(ae1, be1, x01, tol, max, norma);
-rSORE1 = SOR_l1_g2(ae1, be1, x01, tol, max, norma, 0.9);
+rSORE1 = SOR_l1_g2(ae1, be1, x01, tol, 3, norma, 0.9);
 
 disp("Gauss");
 disp(rGaussE1);

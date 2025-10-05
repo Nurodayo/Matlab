@@ -1,7 +1,7 @@
 function sol = gauss_seidel_l1_g2(a, b, x0, tol, max, norma)
     u = [a b];
     u = pivot_l1_g2(u);
-    %% sacar los 0 de la diagonal pipipi
+    %% sacar los 0 de la diagonal 
     b = u(:, end);    
     [n, ~] = size(a);
     a = u(:, 1:n);
