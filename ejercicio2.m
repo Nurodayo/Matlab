@@ -41,7 +41,7 @@ inc = (1:n)';
 
 %mat2(end, :) = mat2(end, :) + mat2(1, :);
 %mat2 = mat2(2:n, 2:end);
-[n, ~] = size(mat2);
+%[n, ~] = size(mat2);
 inc = inc(2:end, 1)
 
 %[mat2, inc] = permutacionLoca(mat2, inc)
